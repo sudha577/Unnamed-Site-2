@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/multiColumnTemplate.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+	<div class="container">
+  <header>
+	<div class="primary_header">
+	<h1 class="title">AWS -Virtual Private Cloud</h1>
+    </div>
+  </header>
+		
+		<section>
+			<br>
+			<br>
+			<p>
+			A VPC is basically a virtually isolated network in the cloud, which resembles a traditional network in a corporate datacenter. Every user can create VPC in their own AWS account. You can create an AWS account by following this link- https://aws.amazon.com(Pre-requisite)</p>
+<br>
+
+<p>
+<h4>VPC terminology</h4>
+Classless Inter-domain Routing(CIDR): For choosing a VPC and creating its subnets, you need to select the range of private IP addresses in the VPC and its subnets. This IP range will be further allocated to all the resources inside this VPC, the range is called CIDR.
+Consider a CIDR IPv4 range 10.0.0.0/16, a VPC can have a range of /16 to /28 for the netmask(specification of the number of address bits available in a network).
+Here /16 will allocate 65536 IPv4 addresses in VPC using the calculation given below:
+As IPv4 represents 32 bit addressing, 32-16(n)= 16  2^16 (2 raised to power 16) = 65536. 
+In any given VPC, 5 IP addresses are reserved by AWS. In the above VPC with CIDR 10.0.0.0/16, the following are reserved by AWS.</p> 
+<p>●	10.0.0.0: Network address.</p>
+<p>●	10.0.0.1: Reserved by AWS for the VPC router.</p>
+<p>●	10.0.0.2: Reserved by AWS for DNS</p>
+<p>●	10.0.0.3: Reserved by AWS for future use.</p>
+<p>●	10.0.0.255: Network broadcast address- Broadcast is not supported in VPC but, AWS reserves this IP address.</p>
+			
+<p>Internet Gateway(IGW)
+There is an Internet Gateway(IGW) attached to every VPC to connect the resources within a VPC to the internet. One IGW can be attached to a VPC at any given point of time. IGW is a must for any VPC to allow its resources to connect to the internet.  
+			</p>
+<p>NAT Gateway: 
+For the resources in Private subnet to gain access to the internet- you need a Network Address Translator(NAT) Gateway/Instance. NAT Gateway sits in the public subnet and the resources in private subnet should have a route to NAT Gateway(there has to be a local route for the traffic flow in between the subnets in the Route table). So the outbound traffic that comes to the NAT gateway from the private subnet is sent to the internet as if it originates from NAT instance. For the inbound traffic from the internet.
+			</p>
+<p>
+	Virtual private gateway(VGW):
+In order to establish a VPN connection for the customer’s on-premises environment to the AWS Environment, the gateway that allows traffic from the customer gateway to AWS is VGW. This acts as an anchor on the AWS side whereas your CGW is an anchor on the customer side to set up a complete VPN connection.
+			</p>
+<p>Customer Gateway(CGW):
+For users in the corporate office to connect to services in AWS in a secure manner using VPN(basically encrypts all the traffic that flows through it), they need to configure a CGW with a public IP address on the customer side. 
+
+			</p>
+			<p>
+Elastic IP(EIP): Elastic IP is a static public IP address that can be associated with an instance in a VPC. When you need internet access to instances in a VPC, you have to attach a public IP address to the instance. 
+When you stop/start an instance in a VPC, you get a different public IP address. You can attach an EIP for the instance to have a persistent IP address throughout its lifetime.
+</p>
+		</section>
+	</div>
+	
+</body>
+</html>
