@@ -22,7 +22,8 @@
 			<p>While creating a VPC, there are 4 types of VPC configurations that you can proceed with. We’ll describe them further now</p>
 			<br>
 			
-			<h3> Scenario1: VPC with a single subnet </h3>
+			<a id="Scenario1">
+			<h3 > Scenario1: VPC with a single subnet </h3>
 			
 			<p>This scenario is typically used to deploy a blog or a personal website. This VPC configuration is not recommended for production workloads in Enterprises. 
 Configuration: Configuration consists of VPC with Public subnets, IGW with a route to the internet also attached to the Route table of the subnet. Additional configuration might include EC2 servers/Instances with public IP addresses/ Elastic IPs. 	</p>
@@ -100,8 +101,11 @@ Configuration: Configuration consists of VPC with Public subnets, IGW with a rou
 			<br>
 			<br>
 			<br>
+				
+				</a>
 			
 			
+			<a id="Scenario2">
 			<h3> Scenario2: VPC with a private and public subnet </h3>
 			
 			<p>As the name indicates this scenario is used to host a real-time customer-facing website. This VPC configuration is recommended for production workloads in Enterprises. 
@@ -155,6 +159,9 @@ Important note: </p>
 			<br>
 			<br>
 			
+			</a>
+			
+			<a id="Scenario3">
 			
 			<h3> Scenario3: VPC with public and private subnet and a VPN access </h3>
 			<br>
@@ -220,6 +227,9 @@ There has to be a Customer Gateway configured on the customer’s end and a Virt
 			<br>
 			<br>
 			
+			</a>
+			
+			<a id="Scenario4">
 
 			<h3> Scenario 4: VPC with private subnet only and a VPN access </h3>
 			<br>
@@ -237,11 +247,12 @@ There has to be a Customer Gateway configured on the customer’s end and a Virt
 			
 			<p>
 			This is same as previous scenario 3 except that public subnet along with internet gateway are not present.</p>
+				
+			</a>
 			
 			
 			
- 	
-			
+ 		
 			
 			
 		</section>
