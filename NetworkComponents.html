@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+.myTable { 
+  width: 100%;
+  text-align: left;
+  background-color: lemonchiffon;
+  border-collapse: collapse; 
+  }
+.myTable th { 
+  background-color: darkgray;
+  color: white; 
+  }
+.myTable td, 
+.myTable th { 
+  padding: 10px;
+  border: 1px solid #404040; 
+  }
+</style>
+<link href="css/multiColumnTemplate.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="primary_header">
+      <h1 class="title">AWS -Virtual Private Cloud</h1>
+    </div>
+    <nav class="secondary_header" id="menu">
+      <ul>
+        <li>ABOUT</li>
+        <li>WORK</li>
+        <li>PORTFOLIO</li>
+        <li>SERVICES</li>
+        <li>CLIENTS</li>
+        <li>CONTACT</li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <h2 class="noDisplay" >VPC Networking Components</h2>
+
+      <h3 align="center" style="font-size:150%;color: #767676">VPC Networking Components</h3>
+		<p>We can use following VPC components to configure our VPC:</p>
+	  	<p style="padding-left: 310px;"><a href="#VGW">Virtual Private Gateway</a><br>
+		<a href="#VGW">Customer Gateway</a><br>
+		<a href="#VPN">VPN Connections</a><br>
+		<a href="#RT">Route Table</a><br></p>
+		<section id="VGW" align="justify">
+		<h5 align="left" style="font-size:125%; color: #767676">Virtual Private Gateway and Customer Gateway</h5>	
+      <p>To link our customer network to Amazon Virtual Private Cloud we need to use an optimal Amazon VPC VPN connection. A Customer Gateway is the anchor on our side (customer side) of that connection. The anchor on the AWS side of this VPN connection is called a Virtual Private Gateway. </p>
+<p align="justify">The following diagram shows your network, the customer gateway, the VPN connection that goes to the virtual private gateway, and the VPC. There are two lines between the customer gateway and virtual private gateway because the VPN connection consists of two tunnels to provide increased availability for the Amazon VPC service. If there's a device failure within AWS, your VPN connection automatically fails over to the second tunnel so that your access isn't interrupted. From time to time, AWS also performs routine maintenance on the virtual private gateway, which may briefly disable one of the two tunnels of your VPN connection. Your VPN connection automatically fails over to the second tunnel while this maintenance is performed. When you configure your customer gateway, it's therefore important that you configure both tunnels.</p>
+		<p align="center"><img src="images/Network components/VGW.png" width="350" height="500" /></p>
+<p>You can create additional VPN connections to other VPCs using the same customer gateway device. You can reuse the same customer gateway IP address for each of those VPN connections. When you create a VPN connection, the VPN tunnel comes up when traffic is generated from your side of the VPN connection. The virtual private gateway is not the initiator; your customer gateway must initiate the tunnels. AWS VPN endpoints support rekeys and can start renegotiations when phase 1 is about to expire if the customer gateway hasn't sent any renegotiation traffic. To protect against a loss of connectivity if your customer gateway becomes unavailable, you can set up a second VPN connection.</p>
+			<p style="font-size:100%"><strong>Creating AWS Virtual Private Gateway and VPN connections:</strong></p>
+			<ul style="list-style-type:square">
+         <li>Open AWS console</li>
+         <li>Go to VPC Dashboard</li>
+         <li>Click on Virtual Private Gateways under VPN and click on <strong>Create Virtual Private Gateway</strong></li>
+      </ul>
+		<p align="center"><img src="images/Network components/createVGW.png" width="1050" height="200"/></p>
+			<br>
+<br>
+			<hr>
+			</section>
+	  <section id="VPN" align="justify" border="solid">
+		  <br>
+	  <h7 align="left" style="font-size:125%;color: #767676">VPN Connections</h7>
+	  <p>AWS Virtual Private Network (AWS VPN) lets you establish a secure and private tunnel from your network or device to the AWS global network. <br>
+You can connect your Amazon VPC to remote networks and users using the following VPN connectivity options:
+</p>
+		  <table class="myTable" width="900" border="1">
+  <tbody>
+    <tr>
+      <th scope="col">&nbsp;VPN connectivity option</th>
+      <th scope="col">&nbsp;Description</th>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;AWS Site-to-Site VPN</th>
+      <td>&nbsp;<p>You can create an IPsec VPN connection between your VPC and your remote network. On the AWS side of the Site-to-Site VPN connection, a virtual private gateway provides two VPN endpoints (tunnels) for automatic failover. You configure your customer gateway on the remote side of the Site-to-Site VPN connection.</p></td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;AWS Client VPN</th>
+      <td>&nbsp;<p>AWS Client VPN is a managed client-based VPN service that enables you to securely access your AWS resources in your on-premises network. With AWS Client VPN, you configure an endpoint to which your users can connect to establish a secure TLS VPN session. This enables clients to access resources in AWS or an on-premises from any location using an OpenVPN-based VPN client.</p></td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;AWS VPN CloudHub</th>
+      <td>&nbsp;<p>If you have more than one remote network (for example, multiple branch offices), you can create multiple AWS Site-to-Site VPN connections via your virtual private gateway to enable communication between these networks.</p></td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Third party software VPN appliance</th>
+      <td>&nbsp;<p>You can create a VPN connection to your remote network by using an Amazon EC2 instance in your VPC that's running a third party software VPN appliance. AWS does not provide or maintain third party software VPN appliances; however, you can choose from a range of products provided by partners and open source communities.</p></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+		  <p >You can also use AWS Direct Connect to create a dedicated private connection from a remote network to your VPC. You can combine this connection with an AWS Site-to-Site VPN to create an IPsec-encrypted connection.</p>
+		  <br>
+		  <br>
+		  <hr>
+	  </section>
+	  
+	 <section id="RT" >
+		 <h4 lign="left" style="font-size:125%;color: #767676">Route tables</h4>
+		 <p>A Route table contains set of rules, that is used to determine where the network traffic from subnet is directed.<br>
+Each subnet in VPC must be associated with a route table, which controls the routing for that subnet. You can explicitly associate a subnet with a route table. Otherwise, the subnet is implicitly associated with the main route table. A subnet can only be associated with one route table at a time, but you can associate multiple subnets with the same route table.
+</p>
+		 <p><strong>Routes:</strong></p>
+		 <p>Each route in a table has two fields destination and a target. For example, consider the below route table, </p>
+		 <table class="myTable">
+  <tbody>
+    <tr>
+      <th scope="col">&nbsp;Target</th>
+      <th scope="col">&nbsp;Destination</th>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;0.0.0.0/0</th>
+      <td>&nbsp;igw-12345678901234567</td>
+    </tr>
+  </tbody>
+</table>
+		 <p>The destination for the route is 0.0.0.0/0, which represents all IPv4 addresses. The target is the internet gateway that's attached to your VPC.<br>
+Every route table contains a local route for communication within the VPC. This route is added by default to all route tables. If your VPC has more than one IPv4 CIDR block, your route tables contain a local route for each IPv4 CIDR block. If you've associated an IPv6 CIDR block with your VPC, your route tables contain a local route for the IPv6 CIDR block. You cannot modify or delete these routes. 
+</p>
+		 <p><strong>Main route table:</strong></p>
+		 <p>When we create a VPC, a main route table will be automatically created. The main route table controls the routing for all subnets that are not explicitly associated with any other route table. We can also create a custom route table. By default, when we create, a custom route table will be empty we can add routes as needed.</p>
+         <p align="center" ><img src="images/Network components/Routetable.png" width="672" height="257" alt=""/></p>
+<p >You can add, remove, and modify routes in main route table and custom route table. We cannot delete a main route table, but we can replace it with a custom route table. We can delete a custom route table only if there are no subnets associated with it.</p>
+      <p align="center" ><img src="images/Network components/Routetable2.png" width="523" height="488" alt=""/></p>
+	  </section>
+		<p> <a href="https://aws.amazon.com/vpc/">https://aws.amazon.com/vpc/ </a></p>
+	<p><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/">https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/ </a></p>
+<p><a href="https://medium.com/tensult/intro-to-vpc-548b69f1bd1f">https://medium.com/tensult/intro-to-vpc-548b69f1bd1f</a></p>
+   
+    
+  </section>
+<div class="row blockDisplay">
+    <div class="left_half"> </div>
+    <div class="column_half right_half"> </div>
+  </div>
+  <div class="social"> </div>
+  <footer class="secondary_header footer">
+    <div class="copyright">&copy;2015 - <strong>Group 2</strong></div>
+	  <div> <center>Sudha Kukutla 		<br>	Jyothsna Kopakka 		<br>	Karmana Trivedi </center> 	</div>
+  </footer>
+</div>
+</body>
+</html>
