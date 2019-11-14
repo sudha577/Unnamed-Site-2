@@ -84,6 +84,7 @@
 	padding-bottom: 0px;
 	padding-left: 0px;
 	width: 100%;
+	display: block;
 }
 .secondary_header ul li {
 	list-style: none;
@@ -98,7 +99,9 @@
 	text-align: center;
 	width: 16%;
 	transition: all 0.3s linear;
+	display: block;
 }
+
 .secondary_header a {
 	text-decoration: none;
 }
@@ -220,7 +223,8 @@
 	font-weight: lighter;
 	letter-spacing: 2px;
 	border-top-width: 2px;
-	font-family: "Source Sans Pro";	
+	font-family:Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";	
+	font-size: 12px;
 }
 body {
 	margin-top: 0px;
@@ -432,6 +436,7 @@ body {
 
 @media (min-width: 1001px) {
 }
+
 .thumbnail {
 	width: 100px;
 	border-radius: 200px;
@@ -548,6 +553,24 @@ header
 	margin-left: 0px;
 	margin-right: 0px;
 }
+p
+{
+	font-size:110%;
+}
+li
+{
+	font-size: 110%;
+}
 .editable
 {
-	scroll-padding-top: 180px;}
+	scroll-padding-top: 180px;
+}
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #E55F0E;
+  color: white;
+}

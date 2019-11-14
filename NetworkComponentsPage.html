@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Simple Theme</title>
+<title>Network Components</title>
 <!-- InstanceEndEditable -->
 <link href="css/multiColumnTemplate.css" rel="stylesheet" type="text/css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,24 +24,26 @@
       <h1 class="title">AWS -Virtual Private Cloud</h1>
     </div>
 	  <div>
-    <nav class="secondary_header" id="menu">
+    
 		
-      <ul>
-		  
+      <nav class="secondary_header">
+		 <ul> 
       <li><a href="HomePage.html">ABOUT</a></li>
 		
-        <li class="dropdown">WHATS INSIDE VPC
+        <li class="dropdown">WHATS INSIDE VPC &#9660;
 			 <div class="dropdown-content">
-				 <a href="NetworkComponentsPage.html">Network Components</a>
+				 <a href="VPCs%20and%20subnets.html">VPCs and Subnets</a>
+			   <a href="NetworkComponentsPage.html">Network Components</a>
+				 <a href="Firewalls.html">Firewalls</a>
 				 </div></li>
-        <li class="dropdown">USECASES
+        <li class="dropdown">USECASES &#9660;
         <div class="dropdown-content">
 		<a href="Scenarios.html#Scenario1">Scenario 1</a>
 		<a href="Scenarios.html#Scenario2">Scenario 2</a>
 		<a href="Scenarios.html#Scenario3">Scenario 3</a>
 		<a href="Scenarios.html#Scenario4">Scenario 4</a>
 				</div></li>
-        <li class="dropdown">CASESTUDY
+        <li class="dropdown">CASESTUDY &#9660;
 		<div class="dropdown-content">
 		<a href="CaseStudy.html#CaseStudy1">CaseStudy 1</a>
 		<a href="CaseStudy.html#CaseStudy2">CaseStudy 2</a>
@@ -50,21 +52,34 @@
 		 <li>COMPANYS USING&nbsp;</li>
 		  <li><a href="References.html">REFERENCES</a></li>		
       </ul>
-    </nav>
+		  </nav>
 		  </div>
   </header>
  <div class="editable">
+	 
   <!-- InstanceBeginEditable name="Region1" -->
+	 <a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="../Unnamed Site 2/VPCs and subnets.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="../Unnamed Site 2//Firewalls.html"  class="next">Next &raquo;</a>
     <h2 class="noDisplay" >VPC Networking Components</h2>
 
       <h3 align="center" style="font-size:150%;color: #767676">VPC Networking Components</h3>
+	<section><aside style="float: right"><img src="images/Network components/gateway logo.png"/> </aside>	
 		<p>We can use following VPC components to configure our VPC:</p>
-	  	<p style="padding-left: 310px;"><a href="#VGW">Virtual Private Gateway</a><br>
-		<a href="#VGW">Customer Gateway</a><br>
-		<a href="#VPN">VPN Connections</a><br>
-		<a href="#RT">Route Table</a><br></p>
+	  	<p style="padding-left: 310px;">
+		<a style="color: #D43E14; text-decoration:underline;" href="#VGW">Internet Gateway</a><br>
+		<a style="color: #D43E14; text-decoration:underline;" href="#VGW">NAT Gateway</a><br>
+		<a style="color: #D43E14; text-decoration:underline;" href="#VGW">Virtual Private Gateway</a><br>
+		<a style="color: #D43E14; text-decoration:underline;" href="#VGW">Customer Gateway</a><br>
+		<a style="color: #D43E14; text-decoration:underline;" href="#VPN">VPN Connections</a><br>
+		<a style="color: #D43E14; text-decoration:underline;" href="#RT">Route Table</a><br></p>
+		
+	 </section>
 		<section class="padding" id="VGW" align="justify">
-		<h5 align="left" style="font-size:125%; color: #767676">Virtual Private Gateway and Customer Gateway</h5>	
+		<h5 align="left" style="font-size:125%; color: #767676">Internet Gateway</h5>
+			<p>There is an Internet Gateway(IGW) attached to every VPC to connect the resources within a VPC to the internet. One IGW can be attached to a VPC at any given point of time. IGW is a must for any VPC to allow its resources to connect to the internet.</p>
+		<h5 align="left" style="font-size:125%; color: #767676">NAT Gateway</h5>
+		<p>For the resources in Private subnet to gain access to the internet- you need a Network Address Translator(NAT) Gateway/Instance. NAT Gateway sits in the public subnet and the resources in private subnet should have a route to NAT Gateway(there has to be a local route for the traffic flow in between the subnets in the Route table). So the outbound traffic that comes to the NAT gateway from the private subnet is sent to the internet as if it originates from NAT instance. For the inbound traffic from the internet.</p>
+			<h5 align="left" style="font-size:125%; color: #767676">Virtual Private Gateway and Customer Gateway</h5>	
       <p>To link our customer network to Amazon Virtual Private Cloud we need to use an optimal Amazon VPC VPN connection. A Customer Gateway is the anchor on our side (customer side) of that connection. The anchor on the AWS side of this VPN connection is called a Virtual Private Gateway. </p>
 <p align="justify">The following diagram shows your network, the customer gateway, the VPN connection that goes to the virtual private gateway, and the VPC. There are two lines between the customer gateway and virtual private gateway because the VPN connection consists of two tunnels to provide increased availability for the Amazon VPC service. If there's a device failure within AWS, your VPN connection automatically fails over to the second tunnel so that your access isn't interrupted. From time to time, AWS also performs routine maintenance on the virtual private gateway, which may briefly disable one of the two tunnels of your VPN connection. Your VPN connection automatically fails over to the second tunnel while this maintenance is performed. When you configure your customer gateway, it's therefore important that you configure both tunnels.</p>
 		<p align="center"><img src="images/Network components/VGW.png" width="350" height="500" /></p>
@@ -144,17 +159,21 @@ Every route table contains a local route for communication within the VPC. This 
          <p align="center" ><img src="images/Network components/Routetable.png" width="672" height="257" alt=""/></p>
 <p >You can add, remove, and modify routes in main route table and custom route table. We cannot delete a main route table, but we can replace it with a custom route table. We can delete a custom route table only if there are no subnets associated with it.</p>
       <p align="center" ><img src="images/Network components/Routetable2.png" width="523" height="488" alt=""/></p>
-	
+	<a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="../Unnamed Site 2/VPCs and subnets.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="../Unnamed Site 2//Firewalls.html"  class="next">Next &raquo;</a>
 	</section>
 	<!-- InstanceEndEditable --></div>
+	
+	
 <div class="row blockDisplay">
     <div class="left_half"> </div>
     <div class="column_half right_half"> </div>
   </div>
   <div class="social"> </div>
   <footer class="secondary_header footer">
-    <div class="copyright">&copy;2015 - <strong>Group 2</strong></div>
-	  <div> <center>Sudha Kukutla 		<br>	Jyothsna Kopakka 		<br>	Karmana Trivedi </center> 	</div>
+    <div class="copyright">&copy;2019 - <strong>Group 2</strong>@All Rights Reserved.</div>
+	  <br>
+	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Kopakka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
   </footer>
 </div>
 </body>

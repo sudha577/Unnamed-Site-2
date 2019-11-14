@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Simple Theme</title>
+<title>Firewalls</title>
 <!-- InstanceEndEditable -->
 <link href="css/multiColumnTemplate.css" rel="stylesheet" type="text/css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,24 +24,26 @@
       <h1 class="title">AWS -Virtual Private Cloud</h1>
     </div>
 	  <div>
-    <nav class="secondary_header" id="menu">
+    
 		
-      <ul>
-		  
+      <nav class="secondary_header">
+		 <ul> 
       <li><a href="HomePage.html">ABOUT</a></li>
 		
-        <li class="dropdown">WHATS INSIDE VPC
+        <li class="dropdown">WHATS INSIDE VPC &#9660;
 			 <div class="dropdown-content">
-				 <a href="NetworkComponentsPage.html">Network Components</a>
+				 <a href="VPCs%20and%20subnets.html">VPCs and Subnets</a>
+			   <a href="NetworkComponentsPage.html">Network Components</a>
+				 <a href="Firewalls.html">Firewalls</a>
 				 </div></li>
-        <li class="dropdown">USECASES
+        <li class="dropdown">USECASES &#9660;
         <div class="dropdown-content">
 		<a href="Scenarios.html#Scenario1">Scenario 1</a>
 		<a href="Scenarios.html#Scenario2">Scenario 2</a>
 		<a href="Scenarios.html#Scenario3">Scenario 3</a>
 		<a href="Scenarios.html#Scenario4">Scenario 4</a>
 				</div></li>
-        <li class="dropdown">CASESTUDY
+        <li class="dropdown">CASESTUDY &#9660;
 		<div class="dropdown-content">
 		<a href="CaseStudy.html#CaseStudy1">CaseStudy 1</a>
 		<a href="CaseStudy.html#CaseStudy2">CaseStudy 2</a>
@@ -50,24 +52,55 @@
 		 <li>COMPANYS USING&nbsp;</li>
 		  <li><a href="References.html">REFERENCES</a></li>		
       </ul>
-    </nav>
+		  </nav>
 		  </div>
   </header>
  <div class="editable">
+	 
   <!-- InstanceBeginEditable name="Region1" -->
-	 <section>
+	 
+	 <section class="content">
+	<a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="../Unnamed Site 2/NetworkComponentsPage.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="../Unnamed Site 2/Scenarios.html"  class="next">Next &raquo;</a>
 		 <h1>Firewalls</h1>
 		 <p>A firewall is something that has a set of rules to allow/block inbound/outbound traffic to/from your network. You can have two types of firewall in AWS</p>
-	 </section>
+		 <ul>
+		 <li>At the network layer- Network Access Control Lists(NACL)</li>
+		 <li>At the Instance level- Security Group(SG)</li>
+		 </ul>
+     <p align="center"><img src="images/Firewall1.png" align="center" width="541" height="628" alt=""/> </p>
+	 <p>The diagram above explains where NACL sits(Firewall for the entire subnet/network), and your SG acts as a firewall at the instance/resource level. Let us talk about the differences between the two</p>
+	 <ul>
+		 <li><p><strong>Stateful vs Stateless:</strong><br>
+Network ACLs are stateless: This means any changes applied to an incoming rule will not be applied to the outgoing rule. e.g. If you allow an incoming port 80, you would also need to apply the rule for outgoing traffic.
+Whereas your SG rules are stateful, i.e, if you allow port 80 for inbound traffic, the outbound traffic for port 80 is automatically allowed. 
+</p></li>
+		 <li><p><strong>Allow or Deny rules:</strong><br>
+Security group supports allow rules only (by default all rules are denied). e.g. You cannot deny a certain IP address from establishing a connection.
+Network ACL supports allow and deny rules. By deny rules, you could explicitly deny a certain IP address to establish a connection example: Block IP address 123.201.57.39 from establishing a connection to an EC2 Instance.</p>
+</li>
+		 <li><p><strong>Evaluation of Firewall rules:</strong><br>
+All rules in a security group are applied whereas rules are applied in their order (the rule with the lower number gets processed first) in Network ACL.
+Security groups evaluate all the rules in them before allowing traffic whereas NACLs do it in the number order, from top to bottom.</p></li>
+		 <li><strong>Defense order:</strong><br>
+Security group first layer of defense for a resource since it sits right next to it, whereas Network ACL is the second layer of the defense- sitting at the network level.
+</li>
+	 </ul>
+		 <a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="../Unnamed Site 2/NetworkComponentsPage.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="../Unnamed Site 2/Scenarios.html"  class="next">Next &raquo;</a>
+		 </section>
 	 <!-- InstanceEndEditable --></div>
+	
+	
 <div class="row blockDisplay">
     <div class="left_half"> </div>
     <div class="column_half right_half"> </div>
   </div>
   <div class="social"> </div>
   <footer class="secondary_header footer">
-    <div class="copyright">&copy;2015 - <strong>Group 2</strong></div>
-	  <div> <center>Sudha Kukutla 		<br>	Jyothsna Kopakka 		<br>	Karmana Trivedi </center> 	</div>
+    <div class="copyright">&copy;2019 - <strong>Group 2</strong>@All Rights Reserved.</div>
+	  <br>
+	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Kopakka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
   </footer>
 </div>
 </body>

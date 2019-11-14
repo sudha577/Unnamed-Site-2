@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Simple Theme</title>
+<title>Home </title>
 <!-- InstanceEndEditable -->
 <link href="css/multiColumnTemplate.css" rel="stylesheet" type="text/css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,24 +24,26 @@
       <h1 class="title">AWS -Virtual Private Cloud</h1>
     </div>
 	  <div>
-    <nav class="secondary_header" id="menu">
+    
 		
-      <ul>
-		  
+      <nav class="secondary_header">
+		 <ul> 
       <li><a href="HomePage.html">ABOUT</a></li>
 		
-        <li class="dropdown">WHATS INSIDE VPC
+        <li class="dropdown">WHATS INSIDE VPC &#9660;
 			 <div class="dropdown-content">
-				 <a href="NetworkComponentsPage.html">Network Components</a>
+				 <a href="VPCs%20and%20subnets.html">VPCs and Subnets</a>
+			   <a href="NetworkComponentsPage.html">Network Components</a>
+				 <a href="Firewalls.html">Firewalls</a>
 				 </div></li>
-        <li class="dropdown">USECASES
+        <li class="dropdown">USECASES &#9660;
         <div class="dropdown-content">
 		<a href="Scenarios.html#Scenario1">Scenario 1</a>
 		<a href="Scenarios.html#Scenario2">Scenario 2</a>
 		<a href="Scenarios.html#Scenario3">Scenario 3</a>
 		<a href="Scenarios.html#Scenario4">Scenario 4</a>
 				</div></li>
-        <li class="dropdown">CASESTUDY
+        <li class="dropdown">CASESTUDY &#9660;
 		<div class="dropdown-content">
 		<a href="CaseStudy.html#CaseStudy1">CaseStudy 1</a>
 		<a href="CaseStudy.html#CaseStudy2">CaseStudy 2</a>
@@ -50,70 +52,41 @@
 		 <li>COMPANYS USING&nbsp;</li>
 		  <li><a href="References.html">REFERENCES</a></li>		
       </ul>
-    </nav>
+		  </nav>
 		  </div>
   </header>
  <div class="editable">
+	 
   <!-- InstanceBeginEditable name="Region1" -->
-	<section>
+	 
+	<section> <aside style="float: right"><img src="images/VPC logo.png"/> </aside>		
     <h2 class="noDisplay" >Main Content</h2>
-    <article class="left_article" >
-      <h3>Introduction</h3>
-      <p>A VPC is a virtually isolated network in the cloud, which resembles a traditional network in a corporate datacenter. Users have complete control over their virtual networking environment, including a selection of own IP address range, creation of subnets, and configuration of route tables and network gateways. For choosing a VPC and creating its subnets, you need to select the range of private IP addresses of the VPC and its subnets called Classless Inter-domain Routing (CIDR). This IP range will be further allocated to all the resources inside this VPC. Consider a CIDR IPv4 range 10.10.0.0/16 Here /16(called as the netmask) will allocate 65536 IPv4 addresses in VPC using the calculation given below: As IPv4 represents 32 bit addressing, 32-16(n)= 16 🡪 2^16 (2 raised to power 16) = 65536. The range can vary from 10.10.0.0 to 10.10.256.256. The VPC block size is in between /28 and /16 netmask </p>
-<p>You can easily customize the network configuration  for your Amazon VPC. For example, you can create a public-facing subnet for  your web servers that has access to the Internet, and place your backend  systems such as databases or application servers in a private-facing subnet  with no Internet access. You can leverage multiple layers of security,  including security groups and network access control lists, to help control  access to Amazon EC2 instances in each subnet. </p>
-<p>We will create a tutorial regarding how to create  an Amazon VPC, creating and configuring a VPC with security groups, Gateways,  public and private Subnets. </p>
-<p>&nbsp;</p>
-<p>Table of contents</p> 
-<p><a href="">i. What is VPC?</a></p>
-<p>ii. What’s inside VPC?</p>
-<p> a) VPCs and Subnets</p>
-<p>b) Public and Private Subnets</p>
-<p>c) Network Address Translation (NAT) </p>
-<p>	d) Internet gateway (IGW)</p>
-<p> e) Virtual Private Gateway (VGW) </p>
-<p>f) Customer Gateway (CGW)</p>
-<p> g) VPN Connections </p>
-<p>h) Route Table</p>
-<p> i) Firewalls</p>
-<p> ● Security groups (SG)</p>
-<p> ● Network Access Control Lists (NACL) </p>
-<p> ● SG vs NACL</p>
-<p> j) Elastic IP ()</p>
-<p>iii. Implementation of VPC with example</p>
-<p> a) Creating a default VPC </p>
-<p>b) Creating a default Subnet </p>
-<p>iv. How to configure a VPC? </p>
-<p>a) Route Table Configuration</p>
-<p> b) Subnet configuration</p>
-<p> c) DHCP Configuration </p>
-<p>d) Network Access Control lists and Security configuration </p>
-<p>v. Examples of different Scenario</p>
-<p> a. VPC with public and private Subnets </p>
-<p>b. VPC with only private subnets and AWS VPN Access </p>
-<p>c. VPC with Public and Private subnets and AWS VPN access</p>
-<p> d. VPC with single public Subnet </p>
-<p>vi. Default VPC configurations </p>
-<p>vii. VPC Peering Connections</p>
-<p> a) Need for peering</p>
-<p> b) VPC Peering Configuration</p>
-<p> c) VPC Peering limitations </p>
-<p>viii. Companies using VPC </p>
-<p>ix. VPC Best Practices and Conclusions </p>
-<p>x.Sources</p>
-		<p> <a href="https://aws.amazon.com/vpc/">https://aws.amazon.com/vpc/ </a></p>
-	<p><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/">https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/ </a></p>
-<p><a href="https://medium.com/tensult/intro-to-vpc-548b69f1bd1f">https://medium.com/tensult/intro-to-vpc-548b69f1bd1f</a></p>
-    </article>
-    <aside class="right_article"><img src="images/1200px-AWS_Simple_Icons_Virtual_Private_Cloud.svg.png" alt="" width="400" height="200" class="placeholder"/> </aside>
-  </section><!-- InstanceEndEditable --></div>
+    
+      <h3>What's and Why VPC</h3>
+      <p style="font-size: 120%">AWS offers several services to fully and seamlessly integrate your local resources with the cloud. One of those services is the Amazon Virtual Private cloud. Running applications in cloud will be completely transparent to end users. Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined. This virtual network closely resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.</p>
+<p style="font-size:120%">By the end of this tutorial, you will be able to know  </p>
+<p style="font-size:120%"><ul style="padding-left: 310px;"><li>What VPC is.</li>
+		<li>what's inside VPC</li>
+		<li>Different case tudies with VPC</li>
+		<li>Different senarios with subnets</li>
+			<li>Companies using VPC</li></ul></p>
+		
+	 </section>	
+		<p><a style="text-decoration: none;display: inline-block;cursor:not-allowed;padding: 8px 16px; float:left;" href="" class="previous">&laquo; Previous</a></p>
+<p float="right" ><a style="text-decoration: none;display: inline-block;padding: 8px 16px; float:right" href="../Unnamed Site 2/VPCs and subnets.html"  class="next">Next &raquo;</a></p>
+    
+  <!-- InstanceEndEditable --></div>
+	
+	
 <div class="row blockDisplay">
     <div class="left_half"> </div>
     <div class="column_half right_half"> </div>
   </div>
   <div class="social"> </div>
   <footer class="secondary_header footer">
-    <div class="copyright">&copy;2015 - <strong>Group 2</strong></div>
-	  <div> <center>Sudha Kukutla 		<br>	Jyothsna Kopakka 		<br>	Karmana Trivedi </center> 	</div>
+    <div class="copyright">&copy;2019 - <strong>Group 2</strong>@All Rights Reserved.</div>
+	  <br>
+	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Kopakka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
   </footer>
 </div>
 </body>

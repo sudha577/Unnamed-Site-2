@@ -24,24 +24,26 @@
       <h1 class="title">AWS -Virtual Private Cloud</h1>
     </div>
 	  <div>
-    <nav class="secondary_header" id="menu">
+    
 		
-      <ul>
-		  
+      <nav class="secondary_header">
+		 <ul> 
       <li><a href="../HomePage.html">ABOUT</a></li>
 		
-        <li class="dropdown">WHATS INSIDE VPC
+        <li class="dropdown">WHATS INSIDE VPC &#9660;
 			 <div class="dropdown-content">
-				 <a href="../NetworkComponentsPage.html">Network Components</a>
+				 <a href="../VPCs and subnets.html">VPCs and Subnets</a>
+			   <a href="../NetworkComponentsPage.html">Network Components</a>
+				 <a href="../Firewalls.html">Firewalls</a>
 				 </div></li>
-        <li class="dropdown">USECASES
+        <li class="dropdown">USECASES &#9660;
         <div class="dropdown-content">
 		<a href="../Scenarios.html#Scenario1">Scenario 1</a>
 		<a href="../Scenarios.html#Scenario2">Scenario 2</a>
 		<a href="../Scenarios.html#Scenario3">Scenario 3</a>
 		<a href="../Scenarios.html#Scenario4">Scenario 4</a>
 				</div></li>
-        <li class="dropdown">CASESTUDY
+        <li class="dropdown">CASESTUDY &#9660;
 		<div class="dropdown-content">
 		<a href="../CaseStudy.html#CaseStudy1">CaseStudy 1</a>
 		<a href="../CaseStudy.html#CaseStudy2">CaseStudy 2</a>
@@ -50,19 +52,23 @@
 		 <li>COMPANYS USING&nbsp;</li>
 		  <li><a href="../References.html">REFERENCES</a></li>		
       </ul>
-    </nav>
+		  </nav>
 		  </div>
   </header>
  <div class="editable">
+	 
   <!-- TemplateBeginEditable name="Region1"-->Region1<!-- TemplateEndEditable --></div>
+	
+	
 <div class="row blockDisplay">
     <div class="left_half"> </div>
     <div class="column_half right_half"> </div>
   </div>
   <div class="social"> </div>
   <footer class="secondary_header footer">
-    <div class="copyright">&copy;2015 - <strong>Group 2</strong></div>
-	  <div> <center>Sudha Kukutla 		<br>	Jyothsna Kopakka 		<br>	Karmana Trivedi </center> 	</div>
+    <div class="copyright">&copy;2019 - <strong>Group 2</strong>@All Rights Reserved.</div>
+	  <br>
+	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Kopakka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
   </footer>
 </div>
 </body>
