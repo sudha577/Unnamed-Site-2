@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html><!-- InstanceBegin template="/Templates/MainTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -27,7 +28,7 @@
     
 		
       <nav class="secondary_header">
-		 <ul> 
+		 <ul class="second_header_list"> 
       <li><a href="HomePage.html">ABOUT</a></li>
 		
         <li class="dropdown">WHATS INSIDE VPC &#9660;
@@ -35,7 +36,9 @@
 				 <a href="VPCs%20and%20subnets.html">VPCs and Subnets</a>
 			   <a href="NetworkComponentsPage.html">Network Components</a>
 				 <a href="Firewalls.html">Firewalls</a>
+				 <a href="peering.html">VPC Peering</a>
 				 </div></li>
+			 
         <li class="dropdown">USECASES &#9660;
         <div class="dropdown-content">
 		<a href="Scenarios.html#Scenario1">Scenario 1</a>
@@ -43,13 +46,15 @@
 		<a href="Scenarios.html#Scenario3">Scenario 3</a>
 		<a href="Scenarios.html#Scenario4">Scenario 4</a>
 				</div></li>
+			 
         <li class="dropdown">CASESTUDY &#9660;
 		<div class="dropdown-content">
-		<a href="CaseStudy.html#CaseStudy1">CaseStudy 1</a>
-		<a href="CaseStudy.html#CaseStudy2">CaseStudy 2</a>
-		<a href="CaseStudy.html#CaseStudy3">CaseStudy 3</a> 
+		<a href="CaseStudy.html#CaseStudy1">Netflix’s CaseStudy</a>
+		<a href="CaseStudy.html#CaseStudy2">Lucidchart’s CaseStudy </a>
+		<a href="CaseStudy.html#CaseStudy3">C4ADS CaseStudy</a> 
 				</div></li>
-		 <li>COMPANYS USING&nbsp;</li>
+			 
+		 
 		  <li><a href="References.html">REFERENCES</a></li>		
       </ul>
 		  </nav>
@@ -58,7 +63,12 @@
  <div class="editable">
 	 
   <!-- InstanceBeginEditable name="Region1" -->
-	 <h4 style="font-size:150%;color: #767676">Virtual Private Cloud(VPC)</h4>
+	 
+	 <p><a style="text-decoration: none;display: inline-block;padding: 8px 16px; float:left" href="HomePage.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px; float:right;" href="NetworkComponentsPage.html"  class="next">Next &raquo;</a></p> 
+	 <br>
+	 <section>
+	 <h3 style="font-size:150%;color: #767676" align="center">Virtual Private Cloud(VPC)</h3>
 	 <p>A VPC is basically a virtually isolated network in the cloud, which resembles a traditional network in a corporate datacenter. Every user can create VPC in their own AWS account. You can create an AWS account by following this link <a href="https://aws.amazon.com">here</a> (Prerequisite)</p>
 	 <h4 align="left" style="font-size:125%; color: #767676"><strong>
 Subnets<br>
@@ -71,7 +81,8 @@ Subnets<br>
 	 </p><p>You can also optionally assign an IPv6 CIDR block to your VPC, and assign IPv6 CIDR blocks to your subnets.</p>
 <p>The following diagram shows a VPC that has been configured with subnets in multiple Availability Zones. 1A, 1B, 2A, and 3A are instances in your VPC. An IPv6 CIDR block is associated with the VPC, and an IPv6 CIDR block is associated with subnet 1. An internet gateway enables communication over the internet, and a virtual private network (VPN) connection enables communication with your corporate network.
 </p>
-	 <p align="center"><img src="images/subnet1.png" width="619" height="732" alt=""/></p>	 
+	 <p align="center"><img src="images/subnet1.png" width="619" height="732" alt=""/>
+		 <p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">AWS Doccumentation</a></cite> </p></p>	 
 	 <p>If a subnet's traffic is routed to an internet gateway, the subnet is known as a <strong>public subnet</strong>. In this diagram, <strong>subnet 1</strong> is a public subnet. If you want your instance in a public subnet to communicate with the internet over IPv4, it must have a public IPv4 address or an Elastic IP address (IPv4). For more information about public IPv4 addresses, see Public IPv4 Addresses. If you want your instance in the public subnet to communicate with the internet over IPv6, it must have an IPv6 address.</p>
 	 <p>If a subnet doesn't have a route to the internet gateway, the subnet is known as a <strong>private subnet</strong>. In this diagram, <strong>subnet 2</strong> is a private subnet.</p>
 	 <p>If a subnet doesn't have a route to the internet gateway, but has its traffic routed to a virtual private gateway for a Site-to-Site VPN connection, the subnet is known as a <strong>VPN-only subnet</strong>. In this diagram, <strong>subnet 3</strong> is a VPN-only subnet. Currently, we do not support IPv6 traffic over a Site-to-Site VPN connection.</p>
@@ -100,9 +111,35 @@ In any given VPC, 5 IP addresses are reserved by AWS. In the above VPC with CIDR
 	 <li>10.0.0.2: Reserved by AWS for DNS</li>
 	 <li>10.0.0.3: Reserved by AWS for future use.</li>
 	 <li>10.0.0.255: Network broadcast address- Broadcast is not supported in VPC but, AWS reserves this IP address.</li></ul>
+	 <h3 align="left" style="font-size:125%; color: #767676">Letsunderstand this with a different analogy:</h3>
+	 <p>Think of your office as a multi-story building
+Each floor has multiple suites
+Each department like HR, Payroll can sit in one floor (or) multiple floors
+Every suite has few rooms
+Each room has couple of desk where employees work
+</p>
+	 <p><strong>Region:</strong>  Think of the office building as equal to a Region. Just like how AWS Regions encompass other components, the office building is an outer layer that contains many things.</p>
+	 <p><strong>Availability Zone:</strong> Think of each floor like an Availability Zone. Just like a region can have more than one availability zone, our building can have more than one floor.</p>
+	 <p><strong>VPC:</strong>  Each department in the office is like a VPC. VPCs span across availability zones in a region, and each department in your office can span across different floors.</p>
+	 <p><strong>Subnet:</strong>  Each Suite represents a subnet. Like how each subnet resides ONLY within an availability zone, each suite will be part of the floor and it won’t span across floors.</p>
+	 <p><strong>IP Address:</strong>  Each desk within a suite represents an IP address.</p>
+	 <p>When companies assign a desk to employee, they first look at:
+Which department this employee belongs to
+Then identifies which floors the department spans across
+Then identifies which suites have open desks
+Assigns one of the open desks to the employee
+</p>
+	 <p><strong>Likewise, when anyone launch AWS EC2 instance:</strong></p>
+	 <p>We need to pick which VPC this instance should be deployed to
+Then we pick which availability zone (if not, default availability zone)
+Then we pick the subnet (if not default subnet)   
+Then an IP from this subnet gets assigned to our EC2 instance (as private IP)
+
+</p>
+	 </section>
 	 
-	 <a style="text-decoration: none;display: inline-block;padding: 8px 16px; float:left" href="../Unnamed Site 2/HomePage.html" class="previous">&laquo; Previous</a>
-<a style="text-decoration: none;display: inline-block;padding: 8px 16px; float:right;" href="../Unnamed Site 2/NetworkComponentsPage.html"  class="next">Next &raquo;</a>
+	 <a style="text-decoration: none;display: inline-block;padding: 8px 16px; float:left" href="HomePage.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px; float:right;" href="NetworkComponentsPage.html"  class="next">Next &raquo;</a>
 	 <!-- InstanceEndEditable --></div>
 	
 	

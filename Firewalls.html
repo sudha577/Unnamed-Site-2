@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html><!-- InstanceBegin template="/Templates/MainTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -27,7 +28,7 @@
     
 		
       <nav class="secondary_header">
-		 <ul> 
+		 <ul class="second_header_list"> 
       <li><a href="HomePage.html">ABOUT</a></li>
 		
         <li class="dropdown">WHATS INSIDE VPC &#9660;
@@ -35,7 +36,9 @@
 				 <a href="VPCs%20and%20subnets.html">VPCs and Subnets</a>
 			   <a href="NetworkComponentsPage.html">Network Components</a>
 				 <a href="Firewalls.html">Firewalls</a>
+				 <a href="peering.html">VPC Peering</a>
 				 </div></li>
+			 
         <li class="dropdown">USECASES &#9660;
         <div class="dropdown-content">
 		<a href="Scenarios.html#Scenario1">Scenario 1</a>
@@ -43,13 +46,15 @@
 		<a href="Scenarios.html#Scenario3">Scenario 3</a>
 		<a href="Scenarios.html#Scenario4">Scenario 4</a>
 				</div></li>
+			 
         <li class="dropdown">CASESTUDY &#9660;
 		<div class="dropdown-content">
-		<a href="CaseStudy.html#CaseStudy1">CaseStudy 1</a>
-		<a href="CaseStudy.html#CaseStudy2">CaseStudy 2</a>
-		<a href="CaseStudy.html#CaseStudy3">CaseStudy 3</a> 
+		<a href="CaseStudy.html#CaseStudy1">Netflix’s CaseStudy</a>
+		<a href="CaseStudy.html#CaseStudy2">Lucidchart’s CaseStudy </a>
+		<a href="CaseStudy.html#CaseStudy3">C4ADS CaseStudy</a> 
 				</div></li>
-		 <li>COMPANYS USING&nbsp;</li>
+			 
+		 
 		  <li><a href="References.html">REFERENCES</a></li>		
       </ul>
 		  </nav>
@@ -60,15 +65,15 @@
   <!-- InstanceBeginEditable name="Region1" -->
 	 
 	 <section class="content">
-	<a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="../Unnamed Site 2/NetworkComponentsPage.html" class="previous">&laquo; Previous</a>
-<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="../Unnamed Site 2/Scenarios.html"  class="next">Next &raquo;</a>
+	<a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="NetworkComponentsPage.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="Scenarios.html" class="next" >next &raquo;</a>
 		 <h1>Firewalls</h1>
 		 <p>A firewall is something that has a set of rules to allow/block inbound/outbound traffic to/from your network. You can have two types of firewall in AWS</p>
 		 <ul>
 		 <li>At the network layer- Network Access Control Lists(NACL)</li>
 		 <li>At the Instance level- Security Group(SG)</li>
 		 </ul>
-     <p align="center"><img src="images/Firewall1.png" align="center" width="541" height="628" alt=""/> </p>
+     <p align="center"><img src="images/Firewall1.png" align="center" width="541" height="628" alt=""/> <p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html">AWS Doccumentation</a></cite></p></p>
 	 <p>The diagram above explains where NACL sits(Firewall for the entire subnet/network), and your SG acts as a firewall at the instance/resource level. Let us talk about the differences between the two</p>
 	 <ul>
 		 <li><p><strong>Stateful vs Stateless:</strong><br>
@@ -86,8 +91,23 @@ Security groups evaluate all the rules in them before allowing traffic whereas N
 Security group first layer of defense for a resource since it sits right next to it, whereas Network ACL is the second layer of the defense- sitting at the network level.
 </li>
 	 </ul>
-		 <a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="../Unnamed Site 2/NetworkComponentsPage.html" class="previous">&laquo; Previous</a>
-<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="../Unnamed Site 2/Scenarios.html"  class="next">Next &raquo;</a>
+	 <p>Below are the few screenshots that you can refer for Secutiry groups and NACL:</p>
+	<p align="center"> <img src="images/Security groups/SG1.png" width="1000" height="700" alt=""/> </p>
+	 <p align="center"> <img src="images/Security groups/SG2.png" width="1000" height="700" alt=""/> </p>
+	 <p align="center"> <img src="images/Security groups/SG3.png" width="1000" height="700" alt=""/> </p>
+	 <p align="center"> <img src="images/Security groups/SG4.png" width="1000" height="700" alt=""/> </p>
+	 <p align="center"> <img src="images/Security groups/SG5.png" width="1000" height="700" alt=""/> </p>
+	 <p align="center"> <img src="images/Security groups/Nacl1.png" width="1000" height="700" alt=""/> </p>
+	 <p align="center"> <img src="images/Security groups/Nacl2.png" width="1000" height="700" alt=""/> </p>
+	 <p align="center"> <img src="images/Security groups/Nacl3.png" width="1000" height="700" alt=""/> </p>
+	 <p align="center"> <img src="images/Security groups/Nacl4.png" width="1000" height="700" alt=""/> </p>
+	 
+	 
+	 
+	 
+	 
+	 <a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="NetworkComponentsPage.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="Scenarios.html" class="next" >next &raquo;</a>
 		 </section>
 	 <!-- InstanceEndEditable --></div>
 	

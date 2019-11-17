@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -27,7 +28,7 @@
     
 		
       <nav class="secondary_header">
-		 <ul> 
+		 <ul class="second_header_list"> 
       <li><a href="../HomePage.html">ABOUT</a></li>
 		
         <li class="dropdown">WHATS INSIDE VPC &#9660;
@@ -35,7 +36,9 @@
 				 <a href="../VPCs and subnets.html">VPCs and Subnets</a>
 			   <a href="../NetworkComponentsPage.html">Network Components</a>
 				 <a href="../Firewalls.html">Firewalls</a>
+				 <a href="../peering.html">VPC Peering</a>
 				 </div></li>
+			 
         <li class="dropdown">USECASES &#9660;
         <div class="dropdown-content">
 		<a href="../Scenarios.html#Scenario1">Scenario 1</a>
@@ -43,13 +46,15 @@
 		<a href="../Scenarios.html#Scenario3">Scenario 3</a>
 		<a href="../Scenarios.html#Scenario4">Scenario 4</a>
 				</div></li>
+			 
         <li class="dropdown">CASESTUDY &#9660;
 		<div class="dropdown-content">
-		<a href="../CaseStudy.html#CaseStudy1">CaseStudy 1</a>
-		<a href="../CaseStudy.html#CaseStudy2">CaseStudy 2</a>
-		<a href="../CaseStudy.html#CaseStudy3">CaseStudy 3</a> 
+		<a href="../CaseStudy.html#CaseStudy1">Netflix’s CaseStudy</a>
+		<a href="../CaseStudy.html#CaseStudy2">Lucidchart’s CaseStudy </a>
+		<a href="../CaseStudy.html#CaseStudy3">C4ADS CaseStudy</a> 
 				</div></li>
-		 <li>COMPANYS USING&nbsp;</li>
+			 
+		 
 		  <li><a href="../References.html">REFERENCES</a></li>		
       </ul>
 		  </nav>

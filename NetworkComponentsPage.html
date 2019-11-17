@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html><!-- InstanceBegin template="/Templates/MainTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -27,7 +28,7 @@
     
 		
       <nav class="secondary_header">
-		 <ul> 
+		 <ul class="second_header_list"> 
       <li><a href="HomePage.html">ABOUT</a></li>
 		
         <li class="dropdown">WHATS INSIDE VPC &#9660;
@@ -35,7 +36,9 @@
 				 <a href="VPCs%20and%20subnets.html">VPCs and Subnets</a>
 			   <a href="NetworkComponentsPage.html">Network Components</a>
 				 <a href="Firewalls.html">Firewalls</a>
+				 <a href="peering.html">VPC Peering</a>
 				 </div></li>
+			 
         <li class="dropdown">USECASES &#9660;
         <div class="dropdown-content">
 		<a href="Scenarios.html#Scenario1">Scenario 1</a>
@@ -43,13 +46,15 @@
 		<a href="Scenarios.html#Scenario3">Scenario 3</a>
 		<a href="Scenarios.html#Scenario4">Scenario 4</a>
 				</div></li>
+			 
         <li class="dropdown">CASESTUDY &#9660;
 		<div class="dropdown-content">
-		<a href="CaseStudy.html#CaseStudy1">CaseStudy 1</a>
-		<a href="CaseStudy.html#CaseStudy2">CaseStudy 2</a>
-		<a href="CaseStudy.html#CaseStudy3">CaseStudy 3</a> 
+		<a href="CaseStudy.html#CaseStudy1">Netflix’s CaseStudy</a>
+		<a href="CaseStudy.html#CaseStudy2">Lucidchart’s CaseStudy </a>
+		<a href="CaseStudy.html#CaseStudy3">C4ADS CaseStudy</a> 
 				</div></li>
-		 <li>COMPANYS USING&nbsp;</li>
+			 
+		 
 		  <li><a href="References.html">REFERENCES</a></li>		
       </ul>
 		  </nav>
@@ -58,39 +63,44 @@
  <div class="editable">
 	 
   <!-- InstanceBeginEditable name="Region1" -->
-	 <a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="../Unnamed Site 2/VPCs and subnets.html" class="previous">&laquo; Previous</a>
-<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="../Unnamed Site 2//Firewalls.html"  class="next">Next &raquo;</a>
+	 <a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="VPCs and subnets.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="Firewalls.html"  class="next">Next &raquo;</a>
     <h2 class="noDisplay" >VPC Networking Components</h2>
 
       <h3 align="center" style="font-size:150%;color: #767676">VPC Networking Components</h3>
-	<section><aside style="float: right"><img src="images/Network components/gateway logo.png"/> </aside>	
+	<section><aside style="float: right"><img src="images/Network components/gateway logo.png"/>
+		<p align="center"><cite><a href="https://www.iconfinder.com/icons/259329/amazon_compute_copy_gateway_networking_vpc_vpn_icon">Iconfinder</a></cite> </p></aside>	
 		<p>We can use following VPC components to configure our VPC:</p>
 	  	<p style="padding-left: 310px;">
-		<a style="color: #D43E14; text-decoration:underline;" href="#VGW">Internet Gateway</a><br>
-		<a style="color: #D43E14; text-decoration:underline;" href="#VGW">NAT Gateway</a><br>
+		<a style="color: #D43E14; text-decoration:underline;" href="#IG">Internet Gateway</a><br>
+		<a style="color: #D43E14; text-decoration:underline;" href="#NAT">NAT Gateway</a><br>
 		<a style="color: #D43E14; text-decoration:underline;" href="#VGW">Virtual Private Gateway</a><br>
 		<a style="color: #D43E14; text-decoration:underline;" href="#VGW">Customer Gateway</a><br>
 		<a style="color: #D43E14; text-decoration:underline;" href="#VPN">VPN Connections</a><br>
 		<a style="color: #D43E14; text-decoration:underline;" href="#RT">Route Table</a><br></p>
 		
 	 </section>
-		<section class="padding" id="VGW" align="justify">
+		<section class="padding" id="IG" align="justify">
 		<h5 align="left" style="font-size:125%; color: #767676">Internet Gateway</h5>
 			<p>There is an Internet Gateway(IGW) attached to every VPC to connect the resources within a VPC to the internet. One IGW can be attached to a VPC at any given point of time. IGW is a must for any VPC to allow its resources to connect to the internet.</p>
-		<h5 align="left" style="font-size:125%; color: #767676">NAT Gateway</h5>
-		<p>For the resources in Private subnet to gain access to the internet- you need a Network Address Translator(NAT) Gateway/Instance. NAT Gateway sits in the public subnet and the resources in private subnet should have a route to NAT Gateway(there has to be a local route for the traffic flow in between the subnets in the Route table). So the outbound traffic that comes to the NAT gateway from the private subnet is sent to the internet as if it originates from NAT instance. For the inbound traffic from the internet.</p>
+		
 			<h5 align="left" style="font-size:125%; color: #767676">Virtual Private Gateway and Customer Gateway</h5>	
+	 </section>
+	 <section class="padding" id="VGW" align="justify">
       <p>To link our customer network to Amazon Virtual Private Cloud we need to use an optimal Amazon VPC VPN connection. A Customer Gateway is the anchor on our side (customer side) of that connection. The anchor on the AWS side of this VPN connection is called a Virtual Private Gateway. </p>
-<p align="justify">The following diagram shows your network, the customer gateway, the VPN connection that goes to the virtual private gateway, and the VPC. There are two lines between the customer gateway and virtual private gateway because the VPN connection consists of two tunnels to provide increased availability for the Amazon VPC service. If there's a device failure within AWS, your VPN connection automatically fails over to the second tunnel so that your access isn't interrupted. From time to time, AWS also performs routine maintenance on the virtual private gateway, which may briefly disable one of the two tunnels of your VPN connection. Your VPN connection automatically fails over to the second tunnel while this maintenance is performed. When you configure your customer gateway, it's therefore important that you configure both tunnels.</p>
-		<p align="center"><img src="images/Network components/VGW.png" width="350" height="500" /></p>
-<p>You can create additional VPN connections to other VPCs using the same customer gateway device. You can reuse the same customer gateway IP address for each of those VPN connections. When you create a VPN connection, the VPN tunnel comes up when traffic is generated from your side of the VPN connection. The virtual private gateway is not the initiator; your customer gateway must initiate the tunnels. AWS VPN endpoints support rekeys and can start renegotiations when phase 1 is about to expire if the customer gateway hasn't sent any renegotiation traffic. To protect against a loss of connectivity if your customer gateway becomes unavailable, you can set up a second VPN connection.</p>
+<p align="justify">The two tunnels #1,#2 in the Virtual Private Gateway are to provide increase availability of Amazon VPS service. Suppose, if there is a device failure within AWS, your VPN connection automatically fails over to the second tunnel so that your access isn't interrupted. From time to time, AWS also performs routine maintenance on the virtual private gateway, which may briefly disable one of the two tunnels of your VPN connection. Your VPN connection automatically fails over to the second tunnel while this maintenance is performed. It's therefore important to configure both tunnels along with customer gateway.<br>The following diagram illustrates your network, the customer gateway, the VPN connection that goes to the virtual private gateway, and the VPC.</p>
+		<p align="center"><img src="images/Network components/VGW.png" width="350" height="500" />
+			<p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html">AWS Doccumentation</a></cite> </p></p>
+<p>we can also create additional VPN connections to other VPCs using the same customer gateway device. When you create a VPN connection, the VPN tunnel comes up when traffic is generated from your side of the VPN connection. To protect against a loss of connectivity if your customer gateway becomes unavailable, you can set up a second VPN connection.</p>
 			<p style="font-size:100%"><strong>Creating AWS Virtual Private Gateway and VPN connections:</strong></p>
 			<ul style="list-style-type:square">
          <li>Open AWS console</li>
          <li>Go to VPC Dashboard</li>
          <li>Click on Virtual Private Gateways under VPN and click on <strong>Create Virtual Private Gateway</strong></li>
       </ul>
-		<p align="center"><img src="images/Network components/createVGW.png" width="1050" height="200"/></p>
+		<p align="center"><img src="images/Network components/createVGW.png" width="1050" height="200"/>
+			
+	 </p>
 			<br>
 <br>
 			<hr>
@@ -125,12 +135,15 @@ You can connect your Amazon VPC to remote networks and users using the following
     </tr>
   </tbody>
 </table>
+		  <p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpn-connections.html">AWS Doccumentation</a></cite> </p>
 <br>
 		  <p >You can also use AWS Direct Connect to create a dedicated private connection from a remote network to your VPC. You can combine this connection with an AWS Site-to-Site VPN to create an IPsec-encrypted connection.</p>
 		  <br>
 		  <br>
 		  <hr>
 	  </section>
+	<h5 id="NAT" align="left" style="font-size:125%; color: #767676">NAT Gateway</h5>
+		<p>For the resources in Private subnet to gain access to the internet- you need a Network Address Translator(NAT) Gateway/Instance. NAT Gateway sits in the public subnet and the resources in private subnet should have a route to NAT Gateway(there has to be a local route for the traffic flow in between the subnets in the Route table). So the outbound traffic that comes to the NAT gateway from the private subnet is sent to the internet as if it originates from NAT instance. For the inbound traffic from the internet.</p>
 	  
 	 <section id="RT" >
 		 <h4 lign="left" style="font-size:125%;color: #767676">Route tables</h4>
@@ -139,7 +152,7 @@ Each subnet in VPC must be associated with a route table, which controls the rou
 </p>
 		 <p><strong>Routes:</strong></p>
 		 <p>Each route in a table has two fields destination and a target. For example, consider the below route table, </p>
-		 <table class="myTable">
+		 <table class="myTable1" >
   <tbody>
     <tr>
       <th scope="col">&nbsp;Target</th>
@@ -156,11 +169,12 @@ Every route table contains a local route for communication within the VPC. This 
 </p>
 		 <p><strong>Main route table:</strong></p>
 		 <p>When we create a VPC, a main route table will be automatically created. The main route table controls the routing for all subnets that are not explicitly associated with any other route table. We can also create a custom route table. By default, when we create, a custom route table will be empty we can add routes as needed.</p>
-         <p align="center" ><img src="images/Network components/Routetable.png" width="672" height="257" alt=""/></p>
+         <p align="center" ><img src="images/Network components/Routetable.png" width="672" height="257" alt=""/><p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">AWS Doccumentation</a></cite></p> </p>
 <p >You can add, remove, and modify routes in main route table and custom route table. We cannot delete a main route table, but we can replace it with a custom route table. We can delete a custom route table only if there are no subnets associated with it.</p>
-      <p align="center" ><img src="images/Network components/Routetable2.png" width="523" height="488" alt=""/></p>
-	<a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="../Unnamed Site 2/VPCs and subnets.html" class="previous">&laquo; Previous</a>
-<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="../Unnamed Site 2//Firewalls.html"  class="next">Next &raquo;</a>
+      <p align="center" ><img src="images/Network components/Routetable2.png" width="523" height="488" alt=""/><p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">AWS Doccumentation</a></cite></p> </p>
+	<a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="VPCs and subnets.html" class="previous">&laquo; Previous</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="Firewalls.html"  class="next">Next &raquo;</a>
+
 	</section>
 	<!-- InstanceEndEditable --></div>
 	
