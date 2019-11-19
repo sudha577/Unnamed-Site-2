@@ -77,9 +77,9 @@
 }
 .container .secondary_header ul {
 	margin-top: 0%;
-	margin-right: auto;
+	margin-right: 0px;
 	margin-bottom: 0px;
-	margin-left: auto;
+	margin-left: 0px;
 	padding-top: 0px;
 	padding-right: 0px;
 	padding-bottom: 0px;
@@ -90,15 +90,15 @@
 .secondary_header ul li {
 	list-style: none;
 	float: left;
-	margin-right: auto;
+	margin-right: 0px;
 	margin-top: 0px;
 	font-family: "Source Sans Pro";
 	font-weight: normal;
 	color: #FFFFFF;
 	letter-spacing: 1px;
-	margin-left: auto;
+	margin-left: 0px;
 	text-align: center;
-	width: 16%;
+	width: 15%;
 	transition: all 0.3s linear;
 	display: block;
 }

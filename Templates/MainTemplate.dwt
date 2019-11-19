@@ -29,8 +29,7 @@
 		
       <nav class="secondary_header">
 		 <ul class="second_header_list"> 
-      <li><a href="../HomePage.html">ABOUT</a></li>
-		
+      <li><a href="../HomePage.html">ABOUT</a></li>		
         <li class="dropdown">WHATS INSIDE VPC &#9660;
 			 <div class="dropdown-content">
 				 <a href="../VPCs and subnets.html">VPCs and Subnets</a>
@@ -51,11 +50,10 @@
 		<div class="dropdown-content">
 		<a href="../CaseStudy.html#CS1">Netflix’s CaseStudy</a>
 		<a href="../CaseStudy.html#CS2">Lucidchart’s CaseStudy </a>
-		<a href="../CaseStudy.html#CS3">C4ADS CaseStudy</a> 
-				</div></li>
-			 
-		 
-		  <li><a href="../References.html">REFERENCES</a></li>		
+			<a href="../CaseStudy.html#CS3">C4ADS CaseStudy</a> 
+			</div></li>
+		<li><a href="../Videos.html">VIDEO</a></li>	 
+		<li><a href="../References.html">REFERENCES</a></li>		
       </ul>
 		  </nav>
 		  </div>
@@ -73,7 +71,7 @@
   <footer class="secondary_header footer">
     <div class="copyright">&copy;2019 - <strong>Group 2</strong>@All Rights Reserved.</div>
 	  <br>
-	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Kopakka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
+	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Koppaka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
   </footer>
 </div>
 </body>

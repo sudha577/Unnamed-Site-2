@@ -29,8 +29,7 @@
 		
       <nav class="secondary_header">
 		 <ul class="second_header_list"> 
-      <li><a href="HomePage.html">ABOUT</a></li>
-		
+      <li><a href="HomePage.html">ABOUT</a></li>		
         <li class="dropdown">WHATS INSIDE VPC &#9660;
 			 <div class="dropdown-content">
 				 <a href="VPCs%20and%20subnets.html">VPCs and Subnets</a>
@@ -51,11 +50,10 @@
 		<div class="dropdown-content">
 		<a href="CaseStudy.html#CS1">Netflix’s CaseStudy</a>
 		<a href="CaseStudy.html#CS2">Lucidchart’s CaseStudy </a>
-		<a href="CaseStudy.html#CS3">C4ADS CaseStudy</a> 
-				</div></li>
-			 
-		 
-		  <li><a href="References.html">REFERENCES</a></li>		
+			<a href="CaseStudy.html#CS3">C4ADS CaseStudy</a> 
+			</div></li>
+		<li><a href="Videos.html">VIDEO</a></li>	 
+		<li><a href="References.html">REFERENCES</a></li>		
       </ul>
 		  </nav>
 		  </div>
@@ -64,7 +62,7 @@
 	 
   <!-- InstanceBeginEditable name="Region1" -->
 	 <a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="Scenarios.html" class="previous">&laquo; Previous</a>
-<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="References.html"  class="next">Next &raquo;</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="Videos.html"  class="next">Next &raquo;</a>
 	 <section>
 			<h2 align="center" style="font-size:150%;color: #767676">Case Studies</h2>
 		 <p style="padding-left: 310px;">
@@ -80,17 +78,18 @@
 		 <p>The distributed database, Cassandra is chosen to store customer data where every data element is replicated many times in production. The primary backups of all data are generated into S3 (Simple Storage Service). Any kind of operator errors, logical errors, software bugs, or other such corruptions can be dealt with by the S3 backups. ‘Armageddon Monkey’ is Netflix’s attempt to recover from failures of all its systems on AWS.</p>
 		 <p>One of the Netflix’s blog post has quoted, ‘Supporting such rapid growth would have been extremely difficult out of our own data centers; we simply could not have racked the servers fast enough,’ It continues, ‘Elasticity of the cloud allows us to add thousands of virtual servers and petabytes of storage within minutes, making such an expansion possible.’ So, that is the power of Amazon Web Services propelling one of the most ambitious companies on earth, Netflix, into uncharted territory and runaway success!</p>
 		 <p><strong>References:</strong></p>
-		 <a href="https://www.matillion.com/blog/redshift/why-did-netflix-migrate-to-the-aws-cloud/">https://www.matillion.com/blog/redshift/why-did-netflix-migrate-to-the-aws-cloud/</a><a href="https://intellipaat.com/blog/how-amazon-web-services-is-powering-netflix-case-study/">https://intellipaat.com/blog/how-amazon-web-services-is-powering-netflix-case-study/</a>
+		 <p>
+		 <a href="https://intellipaat.com/blog/how-amazon-web-services-is-powering-netflix-case-study/">[3]</a>,
+		 <a href="https://www.matillion.com/blog/redshift/why-did-netflix-migrate-to-the-aws-cloud/">[4]</a></p>
 			
 		 <h5 id="CS2" align="left" style="font-size:125%; color: #767676">CaseStudy2</h5>
 		 <h5 align="left" style="font-size:125%; color: #767676">Lucidchart’s move from Amazon EC2 to Amazon VPC</h5>
 		 <p>Lucidchart, an online diagramming software, was initially launched on the Amazon EC2 Classic platform in 2008. Matthew Barlocker, Chief Architect at Lucidchart, discusses their migration plan, pain points, and unexpected issues in one of the AWS conferences as Lucid Software had large documents. Their requirements were they needed to collaborate in real-time, track each change made to be able to restore any previous changes if needed, they use high quality images and store them at same resolution as they imported along with vector graphics.</p>
 		 <p>With growing user base, they needed more robust, secure infrastructure. After much debate about other vendors (such as Rackspace, Google App Engine) and colocation, Lucidchart chose Amazon VPC.</p>
-		 <p>With growing user base, they needed more robust, secure infrastructure. After much debate about other vendors (such as Rackspace, Google App Engine) and colocation, Lucidchart chose Amazon VPC.</p>
 		 <p>Their migration plan was to move top layer first, move one layer at a time, meticulously manage security groups, move monitoring/utility servers last.</p>
 		 <p>Few of the pain points were, that they took time to determine VPC configuration they wanted, took time to troubleshoot network ACL and security group issues, however, they have not had to revisit the configuration since they got it working.</p>
 		 <p>References:</p>
-		 <a href="https://www.youtube.com/watch?v=jxvVYRFJCuc">https://www.youtube.com/watch?v=jxvVYRFJCuc</a><a href="https://www.slideshare.net/MatthewBarlocker/barlocker-vpc">https://www.slideshare.net/MatthewBarlocker/barlocker-vpc</a>
+		 <p><a href="https://www.youtube.com/watch?v=jxvVYRFJCuc">https://www.youtube.com/watch?v=jxvVYRFJCuc</a> , <a href="https://www.slideshare.net/MatthewBarlocker/barlocker-vpc">[5]</a></p>
 		 
 		 <h5 id="CS3" align="left" style="font-size:125%; color: #767676">CaseStudy3</h5>
 		 <h5 align="left" style="font-size:125%; color: #767676">C4ADS (Center for Advanced Defense Studies) </h5>
@@ -103,12 +102,11 @@
 		 <p>To conform all different file types, available into a normalized format is a resource-intensive activity. Hence, they implemented a solution that would tag all uploaded file content with consistent metadata tagging which, in turn, would allow for greater visibility and speedier search results. This automated metadata tagging for each file that was uploaded either manually or via bulk upload would mimic the client’s existing folder structure and schema that they had adopted internally. This approach ensured that the new solution would be easily understood by analysts that were already familiar with the current operational processes.</p>
 		<p align="center"> <img src="images/casestudies/Casestudy3.png" width="975" height="754" alt=""/>
 		 <p align="center"><cite><p align="center"><strong>System Architecture Diagram</strong> <a href="https://www.clearscale.com/company/cloud-computing-resources/c4ads-aws-datalake)">(from here)</a></p></cite> </p></p>
-<p>References:</p>
-		 <a href="https://www.clearscale.com/company/cloud-computing-resources/c4ads-aws-datalake">https://www.clearscale.com/company/cloud-computing-resources/c4ads-aws-datalake</a><br>
-		 <a href="https://www.clearscale.com/services/big-data#page-tabs">https://www.clearscale.com/services/big-data#page-tabs</a>
+<p>References:
+		 <a href="https://www.clearscale.com/company/cloud-computing-resources/c4ads-aws-datalake">[6]</a><br></p>
 		</section>
 	  <a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="Scenarios.html" class="previous">&laquo; Previous</a>
-<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="References.html"  class="next">Next &raquo;</a>
+<a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="Videos.html"  class="next">Next &raquo;</a>
 	
 	 <!-- InstanceEndEditable --></div>
 	
@@ -121,7 +119,7 @@
   <footer class="secondary_header footer">
     <div class="copyright">&copy;2019 - <strong>Group 2</strong>@All Rights Reserved.</div>
 	  <br>
-	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Kopakka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
+	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Koppaka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
   </footer>
 </div>
 </body>

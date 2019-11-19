@@ -29,8 +29,7 @@
 		
       <nav class="secondary_header">
 		 <ul class="second_header_list"> 
-      <li><a href="HomePage.html">ABOUT</a></li>
-		
+      <li><a href="HomePage.html">ABOUT</a></li>		
         <li class="dropdown">WHATS INSIDE VPC &#9660;
 			 <div class="dropdown-content">
 				 <a href="VPCs%20and%20subnets.html">VPCs and Subnets</a>
@@ -51,11 +50,10 @@
 		<div class="dropdown-content">
 		<a href="CaseStudy.html#CS1">Netflix’s CaseStudy</a>
 		<a href="CaseStudy.html#CS2">Lucidchart’s CaseStudy </a>
-		<a href="CaseStudy.html#CS3">C4ADS CaseStudy</a> 
-				</div></li>
-			 
-		 
-		  <li><a href="References.html">REFERENCES</a></li>		
+			<a href="CaseStudy.html#CS3">C4ADS CaseStudy</a> 
+			</div></li>
+		<li><a href="Videos.html">VIDEO</a></li>	 
+		<li><a href="References.html">REFERENCES</a></li>		
       </ul>
 		  </nav>
 		  </div>
@@ -90,7 +88,7 @@
       <p>To link our customer network to Amazon Virtual Private Cloud we need to use an optimal Amazon VPC VPN connection. A Customer Gateway is the anchor on our side (customer side) of that connection. The anchor on the AWS side of this VPN connection is called a Virtual Private Gateway. </p>
 <p align="justify">The two tunnels #1,#2 in the Virtual Private Gateway are to provide increase availability of Amazon VPS service. Suppose, if there is a device failure within AWS, your VPN connection automatically fails over to the second tunnel so that your access isn't interrupted. From time to time, AWS also performs routine maintenance on the virtual private gateway, which may briefly disable one of the two tunnels of your VPN connection. Your VPN connection automatically fails over to the second tunnel while this maintenance is performed. It's therefore important to configure both tunnels along with customer gateway.<br>The following diagram illustrates your network, the customer gateway, the VPN connection that goes to the virtual private gateway, and the VPC.</p>
 		<p align="center"><img src="images/Network components/VGW.png" width="350" height="500" />
-			<p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html">AWS Doccumentation</a></cite> </p></p>
+			<p align="center"><cite><a style="text-decoration: none" href="https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html">[1]</a></cite> </p></p>
 <p>we can also create additional VPN connections to other VPCs using the same customer gateway device. When you create a VPN connection, the VPN tunnel comes up when traffic is generated from your side of the VPN connection. To protect against a loss of connectivity if your customer gateway becomes unavailable, you can set up a second VPN connection.</p>
 			<p style="font-size:100%"><strong>Creating AWS Virtual Private Gateway and VPN connections:</strong></p>
 			<ul style="list-style-type:square">
@@ -135,7 +133,7 @@ You can connect your Amazon VPC to remote networks and users using the following
     </tr>
   </tbody>
 </table>
-		  <p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpn-connections.html">AWS Doccumentation</a></cite> </p>
+		  <p align="center"><cite><a style="text-decoration: none" href="https://docs.aws.amazon.com/vpc/latest/userguide/vpn-connections.html">[1]</a></cite> </p>
 <br>
 		  <p >You can also use AWS Direct Connect to create a dedicated private connection from a remote network to your VPC. You can combine this connection with an AWS Site-to-Site VPN to create an IPsec-encrypted connection.</p>
 		  <br>
@@ -155,8 +153,8 @@ Each subnet in VPC must be associated with a route table, which controls the rou
 		 <table class="myTable1" >
   <tbody>
     <tr>
-      <th scope="col">&nbsp;Target</th>
       <th scope="col">&nbsp;Destination</th>
+      <th scope="col">&nbsp;Traget</th>
     </tr>
     <tr>
       <th scope="row">&nbsp;0.0.0.0/0</th>
@@ -169,9 +167,9 @@ Every route table contains a local route for communication within the VPC. This 
 </p>
 		 <p><strong>Main route table:</strong></p>
 		 <p>When we create a VPC, a main route table will be automatically created. The main route table controls the routing for all subnets that are not explicitly associated with any other route table. We can also create a custom route table. By default, when we create, a custom route table will be empty we can add routes as needed.</p>
-         <p align="center" ><img src="images/Network components/Routetable.png" width="672" height="257" alt=""/><p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">AWS Doccumentation</a></cite></p> </p>
+         <p align="center" ><img src="images/Network components/Routetable.png" width="672" height="257" alt=""/><p align="center"><cite><a style="text-decoration: none" href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">[1]</a></cite></p> </p>
 <p >You can add, remove, and modify routes in main route table and custom route table. We cannot delete a main route table, but we can replace it with a custom route table. We can delete a custom route table only if there are no subnets associated with it.</p>
-      <p align="center" ><img src="images/Network components/Routetable2.png" width="523" height="488" alt=""/><p align="center"><cite><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">AWS Doccumentation</a></cite></p> </p>
+      <p align="center" ><img src="images/Network components/Routetable2.png" width="523" height="488" alt=""/><p align="center"><cite><a style="text-decoration: none" href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">[1]</a></cite></p> </p>
 	<a style="text-decoration: none;display: inline-block;padding: 8px 16px;" href="VPCs and subnets.html" class="previous">&laquo; Previous</a>
 <a style="text-decoration: none;display: inline-block;padding: 8px 16px;float:right;" href="Firewalls.html"  class="next">Next &raquo;</a>
 
@@ -187,7 +185,7 @@ Every route table contains a local route for communication within the VPC. This 
   <footer class="secondary_header footer">
     <div class="copyright">&copy;2019 - <strong>Group 2</strong>@All Rights Reserved.</div>
 	  <br>
-	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Kopakka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
+	  <div class="copyright"> <center>Sudha Kukutla &nbsp;&nbsp;&nbsp;&nbsp;	Jyothsna Koppaka 		&nbsp;&nbsp;&nbsp;&nbsp;	Karmana Trivedi </center> 	</div>
   </footer>
 </div>
 </body>
