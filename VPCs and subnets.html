@@ -88,20 +88,10 @@ Subnets<br>
 	 <p>If a subnet doesn't have a route to the internet gateway, but has its traffic routed to a virtual private gateway for a Site-to-Site VPN connection, the subnet is known as a <strong>VPN-only subnet</strong>. In this diagram, <strong>subnet 3</strong> is a VPN-only subnet. Currently, we do not support IPv6 traffic over a Site-to-Site VPN connection.</p>
 	 <p>Regardless of the type of subnet, the internal IPv4 address range of the subnet is always private—we do not announce the address block to the internet.</p>
 	 <p>There is a limit to the number of VPCs and subnets one can create in for a particular account.</p>
-	 <h3 align="left" style="font-size:125%; color: #767676">Subnet Sizing</h3>
-	 <p>Amazon VPC supports IPv4 and IPv6 addressing, and has different CIDR block size limits for each. By default, all VPCs and subnets must have IPv4 CIDR blocks—you can't change this behavior. You can optionally associate an IPv6 CIDR block with your VPC.</p>
-	  <h3 align="left" style="font-size:125%; color: #767676">Subnet Sizing for IPv4</h3>
-	 <p>When you create a VPC, you must specify an IPv4 CIDR block for the VPC. The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses). After you've created your VPC, you can associate secondary CIDR blocks with the VPC. For more information, see Adding IPv4 CIDR Blocks to a VPC.</p>
-	 <p>When you create a VPC, we recommend that you specify a CIDR block (of /16 or smaller) from the private IPv4 address ranges as specified in RFC 1918:</p>
-	 <ul><li>10.0.0.0 - 10.255.255.255 (10/8 prefix)</li>
-	 <li>172.16.0.0 - 172.31.255.255 (172.16/12 prefix)</li>
-	 <li>192.168.0.0 - 192.168.255.255 (192.168/16 prefix)</li>
-	 </ul>
-	 <p>You can create a VPC with a publicly routable CIDR block that falls outside of the private IPv4 address ranges specified in RFC 1918; however, for the purposes of this documentation, we refer to private IP addresses as the IPv4 addresses that are within the CIDR range of your VPC.</p>
 	 <h3 align="left" style="font-size:125%; color: #767676">Classless Inter-domain Routing(CIDR): </h3>
 	 <p>For choosing a VPC and creating its subnets, you need to select the range of private IP addresses in the VPC and its subnets. This IP range will be further allocated to all the resources inside this VPC, the range is called CIDR.</p>
 	 <p>Consider a CIDR IPv4 range 10.0.0.0/16, a VPC can have a range of /16 to /28 for the netmask(specification of the number of address bits available in a network).</p>
-	 <p>Here /16 will allocate 65536 IPv4 addresses in VPC using the calculation given below:
+	 <p>Here /16 will allocate 65536 IPv4 addresses in VPC using the calculation given below:<br>
 As IPv4 represents 32 bit addressing, 32-16(n)= 16  2^16 (2 raised to power 16) = 65536. 
 In any given VPC, 5 IP addresses are reserved by AWS. In the above VPC with CIDR 10.0.0.0/16, the following are reserved by AWS. 
 </p>
@@ -111,7 +101,10 @@ In any given VPC, 5 IP addresses are reserved by AWS. In the above VPC with CIDR
 	 <li>10.0.0.2: Reserved by AWS for DNS</li>
 	 <li>10.0.0.3: Reserved by AWS for future use.</li>
 	 <li>10.0.0.255: Network broadcast address- Broadcast is not supported in VPC but, AWS reserves this IP address.</li></ul>
-	 <h3 align="left" style="font-size:125%; color: #767676">Letsunderstand this with a different analogy:</h3>
+	 
+	 <h3 align="left" style="font-size:125%; color: #767676">Subnet Sizing</h3>
+	 <p>Amazon VPC supports IPv4 and IPv6 addressing, and has different CIDR block size limits for each. By default, all VPCs and subnets must have IPv4 CIDR blocks—you can't change this behavior. You can optionally associate an IPv6 CIDR block with your VPC.</p>
+	 <h3 align="left" style="font-size:125%; color: #767676">Let us understand this with a different analogy:</h3>
 	 <p>Think of your office as a multi-story building
 Each floor has multiple suites
 Each department like HR, Payroll can sit in one floor (or) multiple floors
