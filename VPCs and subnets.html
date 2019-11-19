@@ -74,18 +74,17 @@ Subnets<br>
 </strong></h4>
 	 <p>A virtual private cloud (VPC) is a virtual network dedicated to your AWS account. It is logically isolated from other virtual networks in the AWS Cloud. You can launch your AWS resources, such as Amazon EC2 instances, into your VPC.</p>
 
-<p>When you create a VPC, you must specify a range of IPv4 addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16. This is the primary CIDR block for your VPC.</p>
-<p>A VPC spans all the Availability Zones in the region. After creating a VPC, you can add one or more subnets in each Availability Zone. When you create a subnet, you specify the CIDR block for the subnet, which is a subset of the VPC CIDR block. Each subnet must reside entirely within one Availability Zone and cannot span zones. Availability Zones are distinct locations that are engineered to be isolated from failures in other Availability Zones. By launching instances in separate Availability Zones, you can protect your applications from the failure of a single location. We assign a unique ID to each subnet.
-	 </p><p>You can also optionally assign an IPv6 CIDR block to your VPC, and assign IPv6 CIDR blocks to your subnets.</p>
+<p>Let us talk about subnets in VPC! A subnet can be defined as a part of the VPC CIDR range where you can use the IP addresses to allocate to resources. Even though a VPC spans across the entire region, every subnet can only be associated with only one Availability Zone. Availability Zones are distinct locations that are engineered to be isolated from failures in other Availability Zones. By launching instances in separate Availability Zones, you can protect your applications from the failure of a single location. In order to uniquely identify a subnet, there is a unique id(provided by AWS) associated with the subnet. </p>
+<p>There are two types of subnets<br>
+	<ul>
+		<li><strong>Private Subnet:</strong> If there is no route to the internet in the Route table associated with the subnet then the subnet is said to be a Private subnet. <br>
+<strong>Use Case:</strong>  Database servers and other application servers that should not be exposed to the internet are present in Private Subnet.<br></li>
+<li><strong>Public Subnet:</strong> If there is an internet gateway attached to the Route table of the subnet.<br><strong>Use Case:</strong> Web Servers and other servers that need direct internet access are placed in Public subnets.	</li></ul></p>
 <p>The following diagram shows a VPC that has been configured with subnets in multiple Availability Zones. 1A, 1B, 2A, and 3A are instances in your VPC. An IPv6 CIDR block is associated with the VPC, and an IPv6 CIDR block is associated with subnet 1. An internet gateway enables communication over the internet, and a virtual private network (VPN) connection enables communication with your corporate network.
 </p>
 	 <p align="center"><img src="images/subnet1.png" width="619" height="732" alt=""/>
 		 <p align="center"><cite><a style="text-decoration: none" href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">[1]</a></cite> </p></p>	 
-	 <p>If a subnet's traffic is routed to an internet gateway, the subnet is known as a <strong>public subnet</strong>. In this diagram, <strong>subnet 1</strong> is a public subnet. If you want your instance in a public subnet to communicate with the internet over IPv4, it must have a public IPv4 address or an Elastic IP address (IPv4). If you want your instance in the public subnet to communicate with the internet over IPv6, it must have an IPv6 address.</p>
-	 <p>If a subnet doesn't have a route to the internet gateway, the subnet is known as a <strong>private subnet</strong>. In this diagram, <strong>subnet 2</strong> is a private subnet.</p>
-	 <p>If a subnet doesn't have a route to the internet gateway, but has its traffic routed to a virtual private gateway for a Site-to-Site VPN connection, the subnet is known as a <strong>VPN-only subnet</strong>. In this diagram, <strong>subnet 3</strong> is a VPN-only subnet. Currently, we do not support IPv6 traffic over a Site-to-Site VPN connection.</p>
-	 <p>Regardless of the type of subnet, the internal IPv4 address range of the subnet is always private—we do not announce the address block to the internet.</p>
-	 <p>There is a limit to the number of VPCs and subnets one can create in for a particular account.</p>
+	 
 	 <h3 align="left" style="font-size:125%; color: #767676">Classless Inter-domain Routing(CIDR): </h3>
 	 <p>For choosing a VPC and creating its subnets, you need to select the range of private IP addresses in the VPC and its subnets. This IP range will be further allocated to all the resources inside this VPC, the range is called CIDR.</p>
 	 <p>Consider a CIDR IPv4 range 10.0.0.0/16, a VPC can have a range of /16 to /28 for the netmask(specification of the number of address bits available in a network).</p>
